@@ -3,7 +3,7 @@ package Level1;
 //https://school.programmers.co.kr/learn/courses/30/lessons/77484
 
 public class 로또최고순위최저순위 {
-	public int[] solution(int[] lottos, int[] win_nums) {
+	public int[] solution1(int[] lottos, int[] win_nums) {
 		int[] answer = new int[2];
 		int a = 0, b = 0;
 		for (int i = 0; i < lottos.length; i++) {
@@ -62,5 +62,44 @@ public class 로또최고순위최저순위 {
 		}
 
 		return answer;
+	}
+
+
+	/*-------------------다른 사람 코드 보고 고친 부분----------------------*/
+	public int[] solution2(int[] lottos, int[] win_nums) {
+		int[] answer = new int[2];
+		int a = 0, b = 0;
+		for(int lotto : lottos) {
+			if(lotto == 0){
+				a++;
+			}
+			for(int win_num : win_nums) {
+				if(lotto == win_num){
+					b++;
+				}
+			}
+		}
+
+		answer[0] = getRanking(a+b);
+		answer[1] = getRanking(b);
+
+		return answer;
+	}
+
+	public int getRanking(int num) {
+		switch (num) {
+			case 6 :
+				return 1;
+			case 5 :
+				return 2;
+			case 4 :
+				return 3;
+			case 3 :
+				return 4;
+			case 2 :
+				return 5;
+			default:
+				return 6;
+		}
 	}
 };
