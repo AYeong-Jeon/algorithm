@@ -1,6 +1,7 @@
 package Level1;
 import java.util.*;
 
+//https://school.programmers.co.kr/learn/courses/30/lessons/178871
 
 public class 달리기경주 {
 	public String[] solution(String[] players, String[] callings) {
