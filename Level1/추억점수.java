@@ -6,21 +6,21 @@ import java.util.*;
 
 public class 추억점수 {
 	public int[] solution1(String[] name, int[] yearning, String[][] photo) {
-		int[] answer = {};
-		Map<String, Integer> map = new HashMap<>();
+		int[] answer = new int[photo.length];
+		Map<String, Integer> score = new HashMap<>();
 
 		for(int i=0; i<name.length; i++){
 			if(i < yearning.length){
-				map.put(name[i], yearning[i]);
+				score.put(name[i], yearning[i]);
 			}else{
-				map.put(name[i], 0);
+				score.put(name[i], 0);
 			}
 		}
 
 		for(int i=0; i<photo.length; i++){
 			int num=0;
 			for(int j=0; j<photo[i].length; j++){
-				num += map.get(photo[i][j]);
+				num += score.getOrDefault(photo[i][j], 0);
 			}
 			answer[i] = num;
 		}
@@ -28,6 +28,10 @@ public class 추억점수 {
 		return answer;
 	}
 
+	/* 내 코드의 문제점
+	1. int[] 배열을 선언하지 않음.
+	2. .get()으로 가져오기만 하고 default 값을 지정해주지 않아서 널포인트익셉션 남.
+	 */
 
 	/*-------------------다른 사람 코드 보고 고친 부분----------------------*/
 	public int[] solution2(String[] name, int[] yearning, String[][] photo) {
