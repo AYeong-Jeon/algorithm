@@ -31,9 +31,9 @@ public class 추억점수 {
 	/* 내 코드의 문제점
 	1. int[] 배열을 선언하지 않음.
 	2. .get()으로 가져오기만 하고 default 값을 지정해주지 않아서 널포인트익셉션 남.
-	 */
 
-	/*-------------------다른 사람 코드 보고 고친 부분----------------------*/
+
+	-------------------다른 사람 코드 보고 고친 부분----------------------*/
 	public int[] solution2(String[] name, int[] yearning, String[][] photo) {
 		int[] answer = new int[photo.length];
 
