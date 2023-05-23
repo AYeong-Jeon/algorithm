@@ -1,7 +1,6 @@
 
 //https://school.programmers.co.kr/learn/courses/30/lessons/12928
 
-
 public class 약수의합 {
 	public int solution1(int n) {
 		int sum = 0;
@@ -12,11 +11,12 @@ public class 약수의합 {
         	}
         	--a;
         }
+        
         return sum;
     }
 	
 	/*
-	 *  고친 부분 !
+	 ==============고친 부분=============
 	 */
 	public int solution1(int num) {
 	    int answer = 0;
