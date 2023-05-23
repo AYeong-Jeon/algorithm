@@ -1,5 +1,7 @@
 package Level1;
 
+//https://school.programmers.co.kr/learn/courses/30/lessons/120830?language=java
+
 public class 양꼬치 {
 	public int solution1(int n, int k) {
         int answer = 0;
