@@ -2,6 +2,8 @@ package Level1;
 
 import java.util.Arrays;
 
+//https://school.programmers.co.kr/learn/courses/30/lessons/12919
+
 public class 서울에서김서방찾기 {
 	public String solution1(String[] seoul) {
 		String answer = "";
