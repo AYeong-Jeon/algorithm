@@ -21,13 +21,15 @@ public class 서울에서김서방찾기 {
 	1. asList가 생각이 안나서 배열 index 찾는거 검색해봄,,
 	
 	==================================다른 사람 풀이 보고 고치기 (다른 방법으로 푼 사람 코드!)
+	1. .equals를 사용해서 비교할 때는 null이 들어올 수 있는 seoul[i] 값보다 "Kim"으로 비교해주는 것이 좋다.
+	만약 null 값으로 .equals를 비교하게되면 널포인트 익셉션이 날 수 있다.
 	* */
 	public String solution2(String[] seoul) {
 		String answer = "";
 		int x =  0;
 
 		for(int i=0; i<seoul.length; i++){
-			if(seoul[i].equals("Kim")) {
+			if("Kim".equals(seoul[i])) {
 				x = i ;
 			}
 		}
