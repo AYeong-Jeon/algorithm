@@ -5,8 +5,7 @@ package 자료구조;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class 같은숫자는싫어 {
-
+public class 같은숫자는싫어Q {
 	public int[] solution1(int []arr) {
 		Queue<Integer> q = new LinkedList<>();
 
@@ -43,8 +42,8 @@ public class 같은숫자는싫어 {
 			}
 			q.poll();
 		}
-
 		q.poll();
+
 		int[] result = new int[q.size()];
 		for(int i=0 ; i<result.length ; i++) {
 			result[i] = q.peek();
