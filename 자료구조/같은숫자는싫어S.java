@@ -33,13 +33,16 @@ public class 같은숫자는싫어S {
 	public int[] solution2(int []arr) {
 		Stack<Integer> stack = new Stack<>();
 
+		//스택의 0번째와 arr의 1번째를 비교하기 위해 먼저 스택에 arr[0]을 넣어줌
 		stack.push(arr[0]);
+		//stack의 가장 위의 값과 arr[i]번째가 같지 않을 경우 push (연속되지 않는 숫자만 들어감.)
 		for(int i=1 ; i<arr.length ; i++) {
 			if(stack.peek() != arr[i]) {
 				stack.push(arr[i]);
 			}
 		}
 
+		//스택의 크기만큼 int형 배열 생성해서 넣어준 후 리턴
 		int[] result = new int[stack.size()];
 		for (int i=result.length-1 ; i>=0 ; i--) {
 			result[i] = stack.peek();
