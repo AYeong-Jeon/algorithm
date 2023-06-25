@@ -24,6 +24,7 @@ public class 더맵게H {
 
 			int newFood = f1 + (f2 * 2);
 			heap.add(newFood);
+			//더해진 횟수 리턴
 			answer++;
 		}
 
