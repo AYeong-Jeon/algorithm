@@ -9,7 +9,6 @@ public class 이중우선순위큐 {
 		int[] answer = {};
 		PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
 		PriorityQueue<Integer> minHeap = new PriorityQueue<>();
-		List<Integer> list = new ArrayList<>();
 
 		for (int i=0 ; i<operations.length ; i++) {
 			String oper = operations[i].split(" ")[1];
@@ -17,31 +16,60 @@ public class 이중우선순위큐 {
 				if (maxHeap.size() < 0) {
 					continue;
 				}
-				int maxNum = maxHeap.poll();
-				list.remove(Integer.valueOf(maxNum));
+				maxHeap.poll();
 			} else if (oper.equals("-1")) {
 				if (minHeap.size() < 0) {
 					continue;
 				}
-				int minNum = minHeap.poll();
-				list.remove(Integer.valueOf(minNum));
+				minHeap.poll();
 			} else {
 				int num = Integer.parseInt(oper);
-				list.add(num);
 				maxHeap.add(num);
 				minHeap.add(num);
 			}
 		}
 
-		for (int i=0 ; i<list.size() ; i++){
-			if(list != null) answer[i] = list.get(i);
+		if(maxHeap != null && minHeap != null) {
+			int maxNum = maxHeap.poll();
+			int minNum = minHeap.poll();
+			answer = new int[]{maxNum, minNum};
 		}
 
 		return answer;
 	}
 
+
 	public int[] solution2(String[] operations) {
-		int[] answer = {};
+		int[] answer = new int[2];
+		PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
+		PriorityQueue<Integer> reverse_pq = new PriorityQueue<Integer>(Collections.reverseOrder());
+
+		for(int i=0; i<operations.length; i++) {
+			String temp[] = operations[i].split(" ");
+			switch(temp[0]) {
+				case "I" :
+					pq.add(Integer.parseInt(temp[1]));
+					reverse_pq.add(Integer.parseInt(temp[1]));
+					break;
+				case "D" :
+					if(pq.size() > 0) {
+						if(Integer.parseInt(temp[1]) == 1) {
+							int max = reverse_pq.poll();
+							pq.remove(max);
+						} else {
+							int min = pq.poll();
+							reverse_pq.remove(min);
+						}
+					}
+					break;
+			}
+		}
+
+		if(pq.size() >= 2) {
+			answer[0] = reverse_pq.poll();
+			answer[1] = pq.poll();
+		}
+
 		return answer;
 	}
 }
