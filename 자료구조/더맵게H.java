@@ -1,5 +1,6 @@
 package 자료구조;
 
+import java.util.Collections;
 import java.util.PriorityQueue;
 
 //https://school.programmers.co.kr/learn/courses/30/lessons/42626
@@ -54,5 +55,28 @@ public class 더맵게H {
 			count = -1;
 
 		return count;
+	}
+
+	//scoville 지수가 K 이상인 수 구하기
+	public int[] solution3(int[] scoville, int K) {
+		int[] answer = null;
+		PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+
+		//maxHeap에 scoville 배열을 넣어주기
+		for (int i=0 ; i<scoville.length ; i++) {
+			maxHeap.add(scoville[i]);
+		}
+
+		//maxHeap에서 스코빌 지수가 K 이상인 수 리턴, 아니면 -1
+		for(int i=0 ; i<maxHeap.size() ; i++) {
+			if(maxHeap.peek() > K) {
+				answer[i] = maxHeap.poll();
+			} else {
+				answer[0] = -1;
+				return answer;
+			}
+		}
+		
+		return answer;
 	}
 }
