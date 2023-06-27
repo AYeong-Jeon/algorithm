@@ -33,6 +33,8 @@ public class 이중우선순위큐 {
 			int maxNum = maxHeap.poll();
 			int minNum = minHeap.poll();
 			answer = new int[]{maxNum, minNum};
+		} else {
+			answer = new int[]{0, 0};
 		}
 
 		return answer;
