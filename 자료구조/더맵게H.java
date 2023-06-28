@@ -57,7 +57,7 @@ public class 더맵게H {
 		return count;
 	}
 
-	//scoville 지수가 K 이상인 수 구하기
+	//더 맵게라는 문제는 최소힙 문제인데 만약 최대힙을 구할 경우 어떻게 풀 수 있는지 scoville 지수가 K 이상인 수를 구해보았다.
 	public int[] solution3(int[] scoville, int K) {
 		int[] answer = null;
 		PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
