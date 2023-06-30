@@ -1,4 +1,4 @@
-package 자료구조;
+package 자료구조.QueueStack;
 
 //https://school.programmers.co.kr/learn/courses/30/lessons/12906
 

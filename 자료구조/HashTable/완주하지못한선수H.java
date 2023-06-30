@@ -1,4 +1,4 @@
-package 자료구조;
+package 자료구조.HashTable;
 
 import java.util.HashMap;
 import java.util.Map;
