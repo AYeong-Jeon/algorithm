@@ -32,7 +32,7 @@ public class BFS와DFS {
 
 		//노드의 간선
 		arr = new int[node+1][node+1];
-		//방문한 적이 있는지 체크
+		//방문 여부 체크 (반드시 검사하기! 검사하지 않을 경우 무한 루프에 빠질 위험성이 있다.)
 		check = new boolean[node+1];
 
 		for(int i=0 ; i<line ; i++) {
