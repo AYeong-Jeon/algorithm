@@ -3,8 +3,6 @@ package 자료구조.BFSDFS;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class 바이러스 {
@@ -13,18 +11,18 @@ public class 바이러스 {
 	static int count = 0;
 	static int node, line;
 
-	static Queue<Integer> q = new LinkedList<>();
-
 	public static void main(String[] args) throws IOException {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-
+		//노드의 개수
 		node = Integer.parseInt(br.readLine());
+		//간선의 개수
 		line = Integer.parseInt(br.readLine());
 
+		//인접 행렬을 표현하기 위한 배열
 		arr = new int[node+1][node+1];
-		//감염여부 확인하는 배열
+		//감염여부를 판단하는 배열
 		check = new boolean[node+1];
 
 		for(int i = 0 ; i < line ; i ++) {
@@ -42,11 +40,13 @@ public class 바이러스 {
 	}
 	public static void dfs(int start) {
 
+		//감염된 컴퓨터 true
 		check[start] = true;
+		//감염된 컴퓨터의 개수 세기
 		count++;
 
-		//check로 이미 감염됐는지 안됐는지
 		for(int i = 0 ; i <= node ; i++) {
+			//연결되어 있고, 감염 안되어 있으면 들어가기
 			if(arr[start][i] == 1 && !check[i])
 				dfs(i);
 		}
