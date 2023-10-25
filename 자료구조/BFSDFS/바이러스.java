@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
+//https://www.acmicpc.net/problem/2606
+
 public class 바이러스 {
 	static boolean[] check;
 	static int[][] arr;
@@ -50,7 +52,6 @@ public class 바이러스 {
 			if(arr[start][i] == 1 && !check[i])
 				dfs(i);
 		}
-
 	}
 
 }

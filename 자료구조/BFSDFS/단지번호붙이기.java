@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
+//https://www.acmicpc.net/problem/2667
+
 public class 단지번호붙이기 {
 	static int n;
 	static boolean[][] map;
