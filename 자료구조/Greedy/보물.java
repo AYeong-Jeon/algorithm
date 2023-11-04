@@ -30,10 +30,10 @@ public class 보물 {
 			B[i] = Integer.parseInt(ST.nextToken());
 		}
 
-		Arrays.sort(B, Collections.reverseOrder());
+		Arrays.sort(B, Collections.reverseOrder());  //내림차순 정렬
 
 		int sum = 0;
-		for(int i=0; i<size; i++) {
+		for(int i=0; i<size; i++) { //A배열의 최솟값과 B배열의 최댓값을 곱해서 더해준다.
 			sum+=A[i]*B[i];
 		}
 		System.out.println(sum);
