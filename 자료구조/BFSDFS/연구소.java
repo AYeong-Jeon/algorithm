@@ -25,6 +25,7 @@ public class 연구소 {
         m = Integer.parseInt(st.nextToken());  //지도 가로 크기
         map = new int[n][m];
 
+        //연구소 만들기
         for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
             for (int j = 0; j < m; j++) {
