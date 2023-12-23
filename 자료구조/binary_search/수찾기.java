@@ -1,6 +1,6 @@
 package 자료구조.binary_search;
 
-import org.junitㅋ.Test;
+import org.junit.Test;
 
 import java.io.BufferedReader;
 import java.io.IOException;
