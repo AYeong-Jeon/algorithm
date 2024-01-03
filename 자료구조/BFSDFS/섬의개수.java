@@ -62,10 +62,11 @@ public class 섬의개수 {
             //dfs 풀이
             for(int i=0;i<h;i++) {
                 for(int j=0;j<w;j++) {
+                    //지도의 위치가 땅이고 방문한 곳이 아닐 경우
                     if(mapArr[i][j] == 1 && !checkArr[i][j]) {
                         //System.out.println("현재 섬 시작 위치 ("+i+","+j+")");
                         checkArr[i][j] = true;
-                        dfs(i,j);  //섬이면 dfs로 섬 찾기
+                        dfs(i,j);  //dfs로 섬 찾기
                         count++;
                     }
                 }
@@ -117,10 +118,12 @@ public class 섬의개수 {
             int nx = row + dx[d];
             int ny = col + dy[d];
 
-            if (nx < 0 || nx >= h || ny < 0 || ny >= w || mapArr[nx][ny] == 0 || checkArr[nx][ny])
+            //방문한 적이 있고, 바다일 경우 continue
+            if (nx < 0 || nx >= h || ny < 0 || ny >= w || mapArr[nx][ny] == 0 || checkArr[nx][ny]) {
                 continue; //배열 범위 벗어나면 그만두기
+            }
 
-            //방문X이고 섬이면
+            //방문한 적이 없고 섬일 경우
             checkArr[nx][ny] = true;
             dfs(nx, ny);
         }
