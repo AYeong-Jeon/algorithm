@@ -8,8 +8,7 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class AtoB {
-
-    static long a,b;
+    static long a, b;
     static int cnt;
 
     public static void main(String[] args) throws IOException {
@@ -19,28 +18,30 @@ public class AtoB {
         a = Long.parseLong(st.nextToken());
         b = Long.parseLong(st.nextToken());
 
-        int cnt = bfs(a,b);
+        cnt = bfs(a,b);
         System.out.println(cnt);
     }
 
-    public static int bfs (long a, long b) {
+    public static int bfs(long a, long b) {
         Queue<Long> q = new LinkedList<>();
-        q.add(a*2);
-        q.add(a*10+1);
+        q.add(a);
 
-        int result = 0;
-        while (!q.isEmpty()) {
-            result++;
-            int size = q.size();
-            for (int i=0; i<size; i++) {
-                long now = q.poll();
-                if(now > b) continue;
-                if(now == b) {
-                    return result;
+        try {
+            int result = 0;
+            while (!q.isEmpty()) {
+                result++;
+                int size = q.size();
+                for (int i = 0; i < size; i++) {
+                    long num = q.poll();
+                    if (num == b) return result;
+                    if (num > b) continue;
+
+                    q.add(num * 2);
+                    q.add(num * 10 + 1);
                 }
-                q.add(now*2);
-                q.add(now*10+1);
             }
+        } catch (Exception ignored) {
+            return -1;
         }
         return -1;
     }
