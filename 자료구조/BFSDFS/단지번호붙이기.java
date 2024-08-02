@@ -60,10 +60,12 @@ public class 단지번호붙이기 {
 	private static void dfs(int x, int y) {
 		visited[x][y] = true;
 
+		//다음 좌표값 계산
 		for (int i = 0; i < 4; i++) {
 			int nowX = x + dx[i];
 			int nowY = y + dy[i];
 
+			//유효한 값인지 체크
 			if (nowX >= 0 && nowY >= 0 && nowX < n && nowY < n) {
 				if (!visited[nowX][nowY] && map[nowX][nowY]) {
 					dfs(nowX, nowY);
