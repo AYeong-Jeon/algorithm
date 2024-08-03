@@ -4,40 +4,32 @@ import java.util.LinkedList;
 
 //https://school.programmers.co.kr/learn/courses/30/lessons/12931
 
-
 public class 자릿수더하기 {
-	public int solution1(int num) {
-		int sum = 0;
-		LinkedList<Integer> numList = new LinkedList<>();
-
-		while (num > 0) {
-			int a = num % 10;
-			num /= 10;
-			numList.add(a);
+	public int solution(int n) {
+		int answer = 0;
+		if (n>9) {
+			String s = String.valueOf(n);
+			for (int i = 0; i < s.toCharArray().length; i++) {
+				answer += Integer.parseInt(String.valueOf(s.charAt(i)));
+			}
+		} else {
+			answer = n;
 		}
 
-		for(int i=0 ; i<numList.size() ; i++) {
-			sum += numList.get(i);
-		}
-
-		return sum;
+		return answer;
 	}
 
-	/* 내 코드의 문제점
-	1. 처음에 num /= 10; 이 부분을 빼먹어서 계속 타임아웃이 떴다.
-	num 값은 바꿔주지 않아서 그대로인데 생각을 못했다..!
-	2. 왜 굳이 굳이 LinkedList를 썼을까..!
+	public int solution2(int n) {
+		int answer = 0;
 
-	*===================고친 부분
-	* */
-	public int solution2(int num) {
-		int sum = 0;
+		while (n != 0) {
+			answer += n % 10;
+			if (n < 10) break;
 
-		while (num > 0) {
-			sum += num % 10;
-			num /= 10;
+			n = n / 10;
 		}
 
-		return sum;
+		return answer;
 	}
+
 }

@@ -13,7 +13,7 @@ public class 약수의_합 {
         for (int i=1; i<=sqrt; i++) {
             if (n%i == 0) {
                 sum += i + (n/i);
-                if (i == (n/i)) sum -= (n/i);
+                if (i == (n/i)) sum -= i;
             }
         }
 
