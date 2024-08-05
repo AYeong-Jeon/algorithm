@@ -10,14 +10,14 @@ public class 정수_내림차순_배치 {
     }
 
     public static long solution(long n) {
-        String s = "";
+        StringBuilder s = new StringBuilder();
 
         int[] numArr = new StringBuilder().append(n).chars().map(Character::getNumericValue).sorted().toArray();
         for(int i=numArr.length-1 ; i>=0 ; i--) {
-            s += numArr[i]+"";
+            s.append(numArr[i]);
         }
 
-        return Long.parseLong(s);
+        return Long.parseLong(s.toString());
     }
 
 }
