@@ -3,6 +3,7 @@ package Level2;
 //https://school.programmers.co.kr/learn/courses/30/lessons/12981
 
 import java.util.LinkedList;
+import java.util.List;
 
 public class 영어_끝말잇기 {
     public static void main(String[] args) {
@@ -14,11 +15,11 @@ public class 영어_끝말잇기 {
         int a=0, b=0;
         boolean isDrop = false;
 
-        LinkedList<String> wordList = new LinkedList<>();
+        List<String> wordList = new LinkedList<>();
         wordList.add(words[0]);
         for (int i=1 ; i<words.length ; i++) {
-            count++;
             char c = new StringBuilder().append(wordList.get(i-1)).reverse().charAt(0);
+            count++;
             if (words[i].startsWith(String.valueOf(c)) && !wordList.contains(words[i])) {
                 wordList.add(words[i]);
             } else {
@@ -28,8 +29,8 @@ public class 영어_끝말잇기 {
         }
 
         if(isDrop) {
-            a = count / n;
-            b = count % n;
+            a = count % n;
+            b = (count / n) + 1;
             if(b==0) b = a;
         }
         answer[0] = a;
