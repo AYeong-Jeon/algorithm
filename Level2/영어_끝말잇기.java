@@ -18,12 +18,12 @@ public class 영어_끝말잇기 {
         wordList.add(words[0]);
         for (int i=1 ; i<words.length ; i++) {
             char c = new StringBuilder().append(wordList.get(i-1)).reverse().charAt(0);
-            if (same(words[i], c) || wordList.contains(words[i])) {
+            if (testChar(words[i], c) || wordList.contains(words[i])) {
                 a = i%n + 1;  //탈락한 사람의 번호
                 b = i/n + 1;  //몇 번째에서 탈락했는지
                 break;  //탈락했을 경우 반복문 종료
             }
-            wordList.add(words[i]);
+            wordList.add(words[i]);  //조건을 만족했을 경우 리스트에 추가
         }
         answer[0] = a;
         answer[1] = b;
@@ -31,7 +31,7 @@ public class 영어_끝말잇기 {
         return answer;
     }
 
-    public static boolean same(String word, char c) {
+    public static boolean testChar(String word, char c) {
         if(word.startsWith(String.valueOf(c))) {
             return false;
         }
