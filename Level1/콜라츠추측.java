@@ -6,21 +6,18 @@ public class 콜라츠추측 {
 	public int solution1(long num) {
 		int answer = 0;
 
-		if(num == 1) return 0;
-
-		while(num != 1) {
-			if(num%2 == 0) {
-				num /= 2;
-			} else {
-				num = num*3+1;
+		if(num==1) return 0;
+		for(int i=0 ; i<500 ; i++) {
+			answer++;
+			if(num==1) return answer-1;
+			if(num%2==0) {
+				num/=2;
+				continue;
 			}
-			++answer;
-			if(answer == 500) {
-				return -1;
-			}
+			num = num*3+1;
 		}
 
-		return answer;
+		return -1;
 	}
 
 	/* 내가 푼 풀이의 문제점

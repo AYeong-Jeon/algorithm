@@ -17,7 +17,7 @@ public class 문자열내_p와y의_개수 {
         return a==0;
     }
 
-    //좋은 답
+    // 한 줄로 끝내기 가능
     boolean solutionAnswer(String s) {
         s = s.toUpperCase();
 
