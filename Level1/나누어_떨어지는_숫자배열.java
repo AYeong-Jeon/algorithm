@@ -9,9 +9,8 @@ public class 나누어_떨어지는_숫자배열 {
         int[] a = solution(new int[]{5,9,7,10}, 5);
     }
     public static int[] solution(int[] arr, int divisor) {
-        int[] answer = Arrays.stream(arr).filter(n -> n%divisor == 0).toArray();
+        int[] answer = Arrays.stream(arr).sorted().filter(n -> n%divisor == 0).toArray();
         if (answer.length == 0) answer = new int[]{-1};
-        Arrays.sort(answer);
 
         return answer;
     }
