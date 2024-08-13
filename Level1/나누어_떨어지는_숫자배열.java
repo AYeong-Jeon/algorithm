@@ -38,5 +38,4 @@ public class 나누어_떨어지는_숫자배열 {
         return answer;
     }
 
-
 }
