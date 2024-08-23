@@ -72,7 +72,7 @@ public class BFS와DFS {
 		while(!q.isEmpty()) {
 
 			start = q.poll();
-			sb.append(start + " ");
+			sb.append(start).append(" ");
 
 			for(int i=1 ; i<=node ; i++) {
 				if(arr[start][i] == 1 && !check[i]) {
