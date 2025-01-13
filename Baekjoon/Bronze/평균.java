@@ -3,6 +3,7 @@ package Baekjoon.Bronze;
 import java.util.Scanner;
 
 //https://www.acmicpc.net/problem/1546
+
 public class 평균 {
 
     public static void main(String[] args) {
